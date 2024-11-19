@@ -1,0 +1,32 @@
+parameters:
+    categories:
+        - id: 1
+          name: 'dog'
+        - id: 2
+          name: 'cat'
+        - id: 3
+          name: 'snake'
+        - id: 4
+          name: 'bird'
+
+    tags:
+        - id: 1
+          name: 'male'
+        - id: 2
+          name: 'female'
+        - id: 3
+          name: 'show'
+        - id: 4
+          name: 'breeding'
+        - id: 5
+          name: 'racing'
+        - id: 6
+          name: 'licensed'
+
+    statuses:
+        - id: 1
+          name: 'available'
+        - id: 2
+          name: 'pending'
+        - id: 3
+          name: 'sold'

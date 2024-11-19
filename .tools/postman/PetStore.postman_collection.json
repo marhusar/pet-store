@@ -1,0 +1,403 @@
+{
+	"info": {
+		"_postman_id": "99580847-15ab-4c36-b075-a6961bb9005f",
+		"name": "PetStore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1959047"
+	},
+	"item": [
+		{
+			"name": "Update Pet",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 5,\n    \"name\": \"Snowbooy\",\n    \"category\": {\n        \"id\": 2,\n        \"name\": \"cat\"\n    },\n    \"photoUrls\": [\n        \"www.snowboy1.sk\", \"www.snowboy2.sk\"\n    ],\n    \"tags\": [\n        {\n            \"id\": 1,\n            \"name\": \"male\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"licensed\"\n        }\n    ],\n    \"status\": \"sold\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/api/v3/pet",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v3",
+						"pet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Store Pet",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Snowboy\",\n    \"category\": {\n        \"id\": 2,\n        \"name\": \"cat\"\n    },\n    \"photoUrls\": [\n        \"www.snowboy1.sk\", \"www.snowboy2.sk\"\n    ],\n    \"tags\": [\n        {\n            \"id\": 1,\n            \"name\": \"male\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"licensed\"\n        }\n    ],\n    \"status\": \"sold\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost/api/v3/pet",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v3",
+						"pet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find by status Sold",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost/api/v3/pet/findByStatus?status=sold",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v3",
+						"pet",
+						"findByStatus"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "sold"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find by status (default)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost/api/v3/pet/findByStatus",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v3",
+						"pet",
+						"findByStatus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find by tags Male & Licensed",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost/api/v3/pet/findByTags?tags[]=male&tags[]=licensed",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v3",
+						"pet",
+						"findByTags"
+					],
+					"query": [
+						{
+							"key": "tags[]",
+							"value": "male"
+						},
+						{
+							"key": "tags[]",
+							"value": "licensed"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find by tags Licensed",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost/api/v3/pet/findByTags?tags[]=licensed",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v3",
+						"pet",
+						"findByTags"
+					],
+					"query": [
+						{
+							"key": "tags[]",
+							"value": "licensed"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show Pet",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost/api/v3/pet/1",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v3",
+						"pet",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show Pet Schema",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost/api/v3/pet/schema",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v3",
+						"pet",
+						"schema"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Index Pets",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost/api/v3/pets?offset=10&limit=10",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v3",
+						"pets"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "10"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Index Categories",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost/api/v3/categories",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v3",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Index Tags",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost/api/v3/tags",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v3",
+						"tags"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Index Statuses",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost/api/v3/statuses",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v3",
+						"statuses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Pet",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost/api/v3/pet/11",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"v3",
+						"pet",
+						"11"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

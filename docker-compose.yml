@@ -1,0 +1,27 @@
+services:
+  php:
+    build: .                 # Build the image from the Dockerfile in the current directory
+    container_name: php_fpm
+    volumes:
+      - ./:/var/www/html      # Mount current directory to /var/www/html in the container
+    working_dir: /var/www/html
+    ports:
+      - "80:80"               # Expose port 80 for HTTP traffic
+    command: sh -c "php -S 0.0.0.0:80 -t www"  # Run PHP's built-in server on port 80
+  node:
+    image: node:18
+    container_name: node
+    working_dir: /usr/src/app
+    volumes:
+      - ./frontend:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "5173:5173" # Vite dev server default port
+    stdin_open: true
+    tty: true
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge

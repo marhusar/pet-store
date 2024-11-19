@@ -1,0 +1,68 @@
+services:
+	- App\Core\RouterFactory::createRouter
+	- Doctrine\Inflector\InflectorFactory::create()
+
+	processor: Nette\Schema\Processor
+
+	categoryFactory:
+	    factory: App\Base\Pet\Factory\CategoryFactory
+
+	categoryCollection:
+	    factory: [ @categoryFactory, 'createCategories']
+	    arguments:
+	    - %categories%
+
+	categoryRepository:
+	    factory: App\Base\Pet\Repository\InMemoryCategoryRepository(@categoryCollection)
+
+	tagFactory:
+	    factory: App\Base\Pet\Factory\TagFactory
+
+	tagCollection:
+	    factory: [ @tagFactory, 'createTags']
+	    arguments:
+	    - %tags%
+
+	tagRepository:
+	    factory: App\Base\Pet\Repository\InMemoryTagRepository(@tagCollection)
+
+	statusFactory:
+	    factory: App\Base\Pet\Factory\statusFactory
+
+	statusCollection:
+	    factory: [ @statusFactory, 'createStatuses']
+	    arguments:
+	    - %statuses%
+
+	statusRepository:
+	    factory: App\Base\Pet\Repository\InMemoryStatusRepository(@statusCollection)
+
+	repositoryCollection:
+	    factory: App\Base\Common\Collection\DataCollection
+	    setup:
+	    - set('category', @categoryRepository)
+	    - set('tag', @tagRepository)
+	    - set('status', @statusRepository)
+
+	xmlPetRepository: App\Base\Pet\Repository\XmlPetRepository
+	eagerPetRepository:
+	    factory: App\Base\Pet\Repository\EagerPetRepository(@xmlPetRepository, @entityMapper)
+	petNormalizer: App\Base\Pet\Normalizer\Schema\PetSchemaNormalizer
+	petProvider:
+	    factory: App\Base\Pet\Handler\PetProvider(@eagerPetRepository)
+	petSaver:
+	    factory: App\Base\Pet\Handler\PetSaver(@petNormalizer, @eagerPetRepository)
+	petApiPresenter:
+	    factory: App\UI\Api\Pet\PetPresenter(@eagerPetRepository, @petProvider, @petSaver)
+	inflector: App\Base\Common\Doctrine\DoctrineInflector
+	documentStorage:
+	    factory:  App\Base\Pet\Repository\DocumentStorage(%documentPath%)
+	documentHandler: App\Base\Pet\Repository\DocumentHandler
+	entityMapper:
+	    factory: App\Base\Common\Repository\EntityMapper(@repositoryCollection, @inflector)
+
+search:
+	-	in: %appDir%
+		classes:
+			- *Factory
+			- *Facade
