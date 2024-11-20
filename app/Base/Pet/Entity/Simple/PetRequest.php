@@ -35,24 +35,26 @@ final class PetRequest
     private int $statusId;
 
     /**
+     * @var int
+     */
+    private int $age;
+
+    /**
      * @param string                $name
      * @param int                   $categoryId
      * @param TextCollection|null   $photoUrls
      * @param NumberCollection|null $tagIds
      * @param int                   $statusId
+     * @param int                   $age
      */
-    public function __construct(
-        string $name,
-        int $categoryId,
-        ?TextCollection $photoUrls,
-        ?NumberCollection $tagIds,
-        int $statusId
-    ) {
+    public function __construct(string $name, int $categoryId, ?TextCollection $photoUrls, ?NumberCollection $tagIds, int $statusId, int $age)
+    {
         $this->name       = $name;
         $this->categoryId = $categoryId;
         $this->photoUrls  = $photoUrls;
         $this->tagIds     = $tagIds;
         $this->statusId   = $statusId;
+        $this->age        = $age;
     }
 
     /**
@@ -99,6 +101,15 @@ final class PetRequest
     {
 		return $this->statusId;
 	}
+
+    /**
+     *
+     * @return int
+     */
+    public function getAge(): int
+    {
+        return $this->age;
+    }
 
     /**
      *
