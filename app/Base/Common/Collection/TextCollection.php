@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Base\Common\Collection;
 
-final class TextCollection implements Arrayable, Countable
+class TextCollection implements Arrayable, Countable
 {
     /**
      * @var string[]
