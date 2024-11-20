@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+  <metadata>
+    <created>2024-11-20</created>
+    <version>1.0</version>
+    <author>Marian Husar</author>
+  </metadata>
+  <tables>
+    <pets>
+      <metadata>
+        <autoIncrement>4</autoIncrement>
+      </metadata>
+      <pet>
+        <id type="integer">1</id>
+        <name type="string">Snowy</name>
+        <categoryId type="integer">2</categoryId>
+        <photoUrls type="array">
+          <photoUrl type="string">www.snowy1.sk</photoUrl>
+          <photoUrl type="string">www.snowie1.sk</photoUrl>
+        </photoUrls>
+        <tagIds type="array">
+          <tagId type="integer">1</tagId>
+          <tagId type="integer">6</tagId>
+          <tagId type="integer">3</tagId>
+        </tagIds>
+        <statusId type="integer">3</statusId>
+        <age type="integer">7</age>
+      </pet>
+      <pet>
+        <id type="integer">2</id>
+        <name type="string">Rex</name>
+        <categoryId type="integer">1</categoryId>
+        <photoUrls type="array">
+          <photoUrl type="string">www.rex1.sk</photoUrl>
+          <photoUrl type="string">www.rexo.sk</photoUrl>
+        </photoUrls>
+        <tagIds type="array">
+          <tagId type="integer">1</tagId>
+          <tagId type="integer">3</tagId>
+          <tagId type="integer">6</tagId>
+        </tagIds>
+        <statusId type="integer">3</statusId>
+        <age type="integer">10</age>
+      </pet>
+      <pet>
+        <id type="integer">3</id>
+        <name type="string">Tom</name>
+        <categoryId type="integer">2</categoryId>
+        <photoUrls type="array">
+          <photoUrl type="string">www.tom1.sk</photoUrl>
+          <photoUrl type="string">www.tom2.sk</photoUrl>
+        </photoUrls>
+        <tagIds type="array">
+          <tagId type="integer">1</tagId>
+          <tagId type="integer">4</tagId>
+        </tagIds>
+        <statusId type="integer">1</statusId>
+        <age type="integer">4</age>
+      </pet>
+    </pets>
+  </tables>
+</database>

@@ -18,6 +18,9 @@ Project is standalone app based on Nette framework.
 
 REST API postman collection is available in directory `/.tools/postman`
 
+Pets data are stored in XML file that serves as database.
+Example of this file is committed in folder `/data/database-example.xml`
+
 Installation
 ------------
 

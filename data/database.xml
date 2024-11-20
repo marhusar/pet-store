@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+  <metadata>
+    <created>2024-11-14</created>
+    <version>1.0</version>
+    <author>Marian Husar</author>
+  </metadata>
+  <tables>
+    <pets>
+      <metadata>
+        <autoIncrement>4</autoIncrement>
+      </metadata>
+    </pets>
+  </tables>
+</database>

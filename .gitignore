@@ -1,7 +1,8 @@
 vendor
 .idea
+data/*
 !data/database.xml
-data
+!data/database-example.xml
 log
 .DS_Store
 .phpunit.cache/
