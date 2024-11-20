@@ -3,3 +3,5 @@ vendor
 !data/database.xml
 data
 log
+.DS_Store
+.phpunit.cache/

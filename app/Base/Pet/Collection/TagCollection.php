@@ -8,7 +8,7 @@ use App\Base\Common\Collection\Arrayable;
 use App\Base\Common\Collection\Countable;
 use App\Base\Pet\Entity\Tag;
 
-final class TagCollection implements Arrayable, Countable
+class TagCollection implements Arrayable, Countable
 {
     /**
      * @var Tag[]
