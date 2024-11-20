@@ -3,6 +3,12 @@ Pet Store Project
 
 Management of Pets
 
+### Index of Pets
+![Index of Pets](demo/index-of-pets.png)
+
+To see gallery of main features, open following folder:
+`/demo`
+
 Requirements
 ------------
 
