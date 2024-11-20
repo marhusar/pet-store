@@ -93,9 +93,9 @@ Key decisions
 
 6. How is domain layer structured?
 
-- Every request has to go through transport layer (Presenter) to domain layer (Saver/Provider - those are facade pattern implementations) to repository layer (xml or InMemory - configuration)
-- To maintain integrity of domain layer (to avoid bugs caused by loose contracts), data are passed through domain layer with value objects. In this case PetRequest servers this purpose.
-- This value object creates strict contract, therefore there is no more bugs in domain layer caused by loose contracts
+- Every request has to go through transport layer (Presenter) through domain layer (Saver/Provider - those are facade pattern implementations) to repository layer (xml or InMemory - configuration)
+- To maintain integrity of domain layer (to avoid bugs caused by loose contracts), data are passed through domain layer with value object. In this case PetRequest serves this purpose.
+- This value object creates strict contract, therefore there are no bugs in domain layer caused by loose contracts
 - There is 1 disadvantage to this approach - when we want to pass another data, value object needs to be modified
 - PetRequest object is created by denormalization after validation of data.
 
@@ -107,13 +107,13 @@ Key decisions
 8. Why to use contracts (interfaces) in Domain layer?
 - promotes flexibility
 - separates low level code, 3rd party dependencies from domain layer
-- creates seams that allow us to Unit test whole domain layer
+- creates seams that allow us to unit test whole domain layer
 
 9. Why use Collection objects instead of arrays?
 - improves readability
 - array operations are often hard to read, so those operations are encapsulated
 
-10. Why keep Transport layer (Presenters) thin?
+10. Why keep transport layer (Presenters) thin?
 - So we can unit test all business logic
 - Easily switch frameworks if needed, business logic is framework independent
 - This is achieved with use of facade pattern
