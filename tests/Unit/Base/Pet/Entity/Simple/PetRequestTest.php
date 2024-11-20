@@ -31,6 +31,7 @@ class PetRequestTest extends TestCase
             ->disableOriginalConstructor()
             ->onlyMethods(['toArray'])
             ->getMock();
+        $age = 3;
 
         $expectedArray = [
             'name'       => $name,
@@ -38,8 +39,9 @@ class PetRequestTest extends TestCase
             'photoUrls'  => [],
             'tagIds'     => [],
             'statusId'   => $statusId,
+            'age'        => $age,
         ];
-        $createdPetRequest = new PetRequest($name, $categoryId, $photoUrls, $tagIds, $statusId);
+        $createdPetRequest = new PetRequest($name, $categoryId, $photoUrls, $tagIds, $statusId, $age);
 
         $this->assertEquals($expectedArray, $createdPetRequest->toArray());
     }
@@ -51,8 +53,9 @@ class PetRequestTest extends TestCase
         $photoUrls = $this->createMock(TextCollection::class);
         $tagIds = $this->createMock(NumberCollection::class);
         $statusId = 2;
+        $age = 3;
 
-        $petRequest = new PetRequest($name, $categoryId, $photoUrls, $tagIds, $statusId);
+        $petRequest = new PetRequest($name, $categoryId, $photoUrls, $tagIds, $statusId, $age);
 
         $this->assertEquals($name, $petRequest->getName());
     }
@@ -64,8 +67,9 @@ class PetRequestTest extends TestCase
         $photoUrls = $this->createMock(TextCollection::class);
         $tagIds = $this->createMock(NumberCollection::class);
         $statusId = 2;
+        $age = 3;
 
-        $petRequest = new PetRequest($name, $categoryId, $photoUrls, $tagIds, $statusId);
+        $petRequest = new PetRequest($name, $categoryId, $photoUrls, $tagIds, $statusId, $age);
 
         $this->assertEquals($categoryId, $petRequest->getCategoryId());
     }
@@ -77,8 +81,9 @@ class PetRequestTest extends TestCase
         $photoUrls = new TextCollection(['www.abc.sk', 'www.def.sk']);
         $tagIds = $this->createMock(NumberCollection::class);
         $statusId = 2;
+        $age = 3;
 
-        $petRequest = new PetRequest($name, $categoryId, $photoUrls, $tagIds, $statusId);
+        $petRequest = new PetRequest($name, $categoryId, $photoUrls, $tagIds, $statusId, $age);
 
         $this->assertEquals(['www.abc.sk', 'www.def.sk'], $petRequest->getPhotoUrls()->toArray());
     }
@@ -90,8 +95,9 @@ class PetRequestTest extends TestCase
         $photoUrls = $this->createMock(TextCollection::class);
         $tagIds = new NumberCollection([1, 2]);
         $statusId = 2;
+        $age = 3;
 
-        $petRequest = new PetRequest($name, $categoryId, $photoUrls, $tagIds, $statusId);
+        $petRequest = new PetRequest($name, $categoryId, $photoUrls, $tagIds, $statusId, $age);
 
         $this->assertEquals([1, 2], $petRequest->getTagIds()->toArray());
     }
@@ -103,8 +109,9 @@ class PetRequestTest extends TestCase
         $photoUrls = $this->createMock(TextCollection::class);
         $tagIds = $this->createMock(NumberCollection::class);
         $statusId = 2;
+        $age = 3;
 
-        $petRequest = new PetRequest($name, $categoryId, $photoUrls, $tagIds, $statusId);
+        $petRequest = new PetRequest($name, $categoryId, $photoUrls, $tagIds, $statusId, $age);
 
         $this->assertEquals($statusId, $petRequest->getStatusId());
     }

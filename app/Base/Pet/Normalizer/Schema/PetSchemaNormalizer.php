@@ -90,6 +90,7 @@ class PetSchemaNormalizer implements PetNormalizer
                 }
                 return $name;
             }),
+            'age' => Expect::int()
         ])->before(function (array $request) {
             $request['categoryId'] = $request['category'] ?? [];
             $request['tagIds'] = $request['tags'] ?? [];
@@ -123,6 +124,7 @@ class PetSchemaNormalizer implements PetNormalizer
             'photoUrls' => ['string', 'string'],
             'tags' => [['id' => 'int', 'name' => 'string']],
             'status' => 'string',
+            'age' => 'int'
         ];
 
         return new DataCollection($schema);
